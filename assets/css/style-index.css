@@ -1,0 +1,30 @@
+body {
+    font-family: 'Harmattan', sans-serif;
+}
+
+#landingHeader {
+    margin: 50px;
+    width: auto;
+}
+
+.headerContainer {
+    border: 1px solid;
+    width: fit-content;
+}
+
+#headTop {
+    font-size: 20px;
+    font-style: italic;
+}
+
+#headBottom {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
+    margin-top: 3px;
+}
+
+#searchContainer {
+    text-align: center;
+    margin: 150px 50px;
+    width: auto;
+}
