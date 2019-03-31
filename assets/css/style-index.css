@@ -1,5 +1,7 @@
 body {
+    background-image: url(../images/dust_scratches.png);
     font-family: 'Harmattan', sans-serif;
+    color: #0f02c4;
 }
 
 #landingHeader {
@@ -25,7 +27,38 @@ body {
 }
 
 #searchContainer {
+    /* border: 1px solid; */
     text-align: center;
     margin: 150px 50px;
     width: auto;
+}
+
+#searchLabel {
+    font-size: 22px;
+}
+
+#searchText {
+    margin: 10px 0px;
+    border-radius: 2px;
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+#submit {
+    border-radius: 3px;
+    font-size: 15px;
+    height: 35px;
+    width: 65px;
+    background-color: #0f02c4;
+    color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
