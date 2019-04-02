@@ -62,3 +62,24 @@ body {
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
 }
+
+/* iPhone 5/SE */
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .headerContainer {
+        text-align: center !important;
+    }    
+}
+
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .headerContainer {
+        text-align: center !important;
+    }    
+}
