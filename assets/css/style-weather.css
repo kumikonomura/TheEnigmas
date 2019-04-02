@@ -19,3 +19,53 @@
     padding:5px;
     height:100%;
 }
+body {
+    background-image: url(../images/dust_scratches.png);
+    font-family: 'Harmattan', sans-serif;
+}
+
+nav {
+    background-image: url(../images/dust_scratches.png);
+}
+
+.brand-logo {
+    font-family: 'Fredericka the Great', cursive;
+    margin-left: 20px;
+}
+
+#nav-mobile {
+    margin-right: 20px;
+}
+
+.navItem {
+    font-size: 20px;
+}
+
+/* this is for the menu items on mobile slide navigation */
+/* I can only get the font size to change if I use !imporant */
+.mobileNav {
+    font-size: 20px !important;
+}
+
+/* iPhone 5/SE */
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .brand-logo {
+        font-size: 20px !important;
+        margin: auto;
+    }
+}
+
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .brand-logo {
+        font-size: 20px;
+        margin: auto;
+  }
+}
