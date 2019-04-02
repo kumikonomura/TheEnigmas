@@ -1,7 +1,7 @@
 body {
     background-image: url(../images/dust_scratches.png);
     font-family: 'Harmattan', sans-serif;
-    color: #0f02c4;
+    color:#1a237e;
 }
 
 #landingHeader {
@@ -55,7 +55,7 @@ body {
     font-size: 15px;
     height: 35px;
     width: 65px;
-    background-color: #0f02c4;
+    background-color: #1a237e;
     color: white;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;

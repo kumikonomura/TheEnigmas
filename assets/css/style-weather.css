@@ -1,0 +1,27 @@
+body {
+    background-image: url(../images/dust_scratches.png);
+    font-family: 'Harmattan', sans-serif;
+}
+
+nav {
+    background-image: url(../images/dust_scratches.png);
+}
+
+.brand-logo {
+    font-family: 'Fredericka the Great', cursive;
+    margin-left: 20px;
+}
+
+#nav-mobile {
+    margin-right: 20px;
+}
+
+.navItem {
+    font-size: 20px;
+}
+
+/* this is for the menu items on mobile slide navigation */
+/* I can only get the font size to change if I use !imporant */
+.mobileNav {
+    font-size: 20px !important;
+}
