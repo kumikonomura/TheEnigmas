@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Harmattan" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style-weather.css">
-
 </head>
-
 <body>
-        <header>
+  <header>
                 <nav>
                     <div class="nav-wrapper indigo darken-4">
                         <a href="./index.html" class="brand-logo white-text text-white">Travel Buddy</a>
@@ -35,8 +31,24 @@
                         <li><a href="./index.html" class="mobileNav white-text">New Search</a></li>
                 </ul>
             </header>
-
-
+  
+  
+    <div id="container">
+        <div id="column1">
+            <button onclick="temperature()">Temperature</button>
+            <button onclick="precipitation()">Precipitation</button>
+            <button onclick="wind()">Wind</button>
+            <div id="city"></div>
+            <div id="wind"></div>
+            <div id="humidity"></div>
+            <div id="temp"></div>
+        </div>
+        <div id="column2">
+            <div id="row1">
+                <h2>5 Day Forecast</h2>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -46,5 +58,4 @@
     </script>
     <script src="./assets/javascript/travelBuddy.js"></script>
 </body>
-
 </html>
