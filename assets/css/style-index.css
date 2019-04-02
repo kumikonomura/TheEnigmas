@@ -72,6 +72,14 @@ body {
     .headerContainer {
         text-align: center !important;
     }    
+
+    #searchContainer {
+        margin-top: 100px;
+    }
+
+    #searchLabel {
+        font-size: 20px;
+    }
 }
 
 @media only screen 
@@ -82,4 +90,20 @@ body {
     .headerContainer {
         text-align: center !important;
     }    
+
+    #searchContainer {
+        margin: 50px;
+    }
+
+    #headTop {
+        font-size: 18px
+    }
+
+    #headBottom {
+        font-size: 40px;
+    }
+
+    #searchLabel {
+        font-size: 20px;
+    }
 }
