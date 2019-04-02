@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./assets/css/style-news.css">
 </head>
 <body>
-        <header>
+   <header>
                 <nav>
                     <div class="nav-wrapper indigo darken-4">
                         <a href="./index.html" class="brand-logo white-text text-white">Travel Buddy</a>
@@ -33,10 +33,23 @@
                         <li><a href="./index.html" class="mobileNav white-text">New Search</a></li>
                 </ul>
             </header>
-        
-
-
-
+    <span id="cityNews"></span>
+    <button id='submit'>submit</button>
+  
+<script>
+document.querySelector('#submit').addEventListener('click',
+e => {
+   e.preventDefault()
+  fetch(
+    'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=b3458132a49e43e3a296ebfa66cb04d1')
+    .then(r => r.json())
+    .then(r => {
+        console.log(r)
+      document.querySelector('#cityNews').textContent = r.articles[0].title
+    })
+})
+</script>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
