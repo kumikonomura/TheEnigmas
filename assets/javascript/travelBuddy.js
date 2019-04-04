@@ -5,12 +5,14 @@
 // fetch('https://newsapi.org/v2/top-headlines?country=se&apiKey=b3458132a49e43e3a296ebfa66cb04d1')
 // fetch('https://api.exchangeratesapi.io/latest')
 
+let countryCode = localStorage.getItem('searchInput')
+  
   fetch(
-    `https://newsapi.org/v2/top-headlines?country=${searchInput}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
+    `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
     .then(r => r.json())
     .then(r => {
       console.log(r.articles[0])
-      console.log(searchInput)
+      console.log(countryCode)
    
 for( i=0;  i < 5; i++)
 console.log("Making images")
