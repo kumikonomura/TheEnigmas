@@ -6,27 +6,30 @@
 // fetch('https://api.exchangeratesapi.io/latest')
 
 let countryCode = localStorage.getItem('searchInput')
-  
-  fetch(
-    `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
-    .then(r => r.json())
-    .then(r => {
-      console.log(r.articles[0])
-      console.log(countryCode)
-   
-for( i=0;  i < 5; i++)
-console.log("Making images")
-           let hElem = document.createElement("h5")
-           hElem.innerHTML = r.articles[i].title
-           hElem.id = "title" + i
-           let imgElem = document.createElement("img")
-           imgElem.setAttribute("src", r.articles[i].urlToImage)
-           let linkElem = document.createElement('a')
-           linkElem.setAttribute('href',r.articles[i].url)
-           linkElem.innerHTML = "Click here to read more!"
-           document.querySelector('#article').append(hElem, imgElem, linkElem)
 
-          })
+fetch(
+  `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
+  .then(r => r.json())
+  .then(r => {
+    console.log(r.articles[0])
+    console.log(countryCode)
+
+    for (i = 0; i < 5; i++)
+      console.log("Making images")
+    let hElem = document.createElement("h5")
+    hElem.innerHTML = r.articles[i].title
+    hElem.id = "title" + i
+    let contentElem = document.createElement("p")
+    contentElem.innerHTML = r.articles[i].content
+    console.log(contentElem)
+    let imgElem = document.createElement("img")
+    imgElem.setAttribute("src", r.articles[i].urlToImage)
+    let linkElem = document.createElement('a')
+    linkElem.setAttribute('href', r.articles[i].url)
+    linkElem.innerHTML = "Click here to read more!"
+    document.querySelector('#article').append(hElem, contentElem, linkElem, imgElem)
+
+  })
 
 // fetch('https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
 //       .then(r => r.json())
