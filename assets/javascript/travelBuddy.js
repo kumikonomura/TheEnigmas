@@ -20,14 +20,16 @@ fetch(
     hElem.innerHTML = r.articles[i].title
     hElem.id = "title" + i
     let contentElem = document.createElement("p")
-    contentElem.innerHTML = r.articles[i].content
-    console.log(contentElem)
+    contentElem.innerHTML = `
+    <p style="font-size:18px; padding-bottom: 10px;">${r.articles[i].content}</p>
+    `
     let imgElem = document.createElement("img")
     imgElem.setAttribute("src", r.articles[i].urlToImage)
     let linkElem = document.createElement('a')
     linkElem.setAttribute('href', r.articles[i].url)
-    linkElem.innerHTML = "Click here to read more!"
-    document.querySelector('#article').append(hElem, contentElem, linkElem, imgElem)
+    linkElem.innerHTML = `
+    <a href style="font-size:18px;">Click here to read full article..</a>`
+    document.querySelector('#article').append(hElem, imgElem, contentElem, linkElem)
 
   })
 
