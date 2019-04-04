@@ -6,10 +6,11 @@
 // fetch('https://api.exchangeratesapi.io/latest')
 
   fetch(
-    'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=b3458132a49e43e3a296ebfa66cb04d1')
+    `https://newsapi.org/v2/top-headlines?country=${searchInput}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
     .then(r => r.json())
     .then(r => {
       console.log(r.articles[0])
+      console.log(searchInput)
    
 for( i=0;  i < 5; i++)
 console.log("Making images")
@@ -18,7 +19,11 @@ console.log("Making images")
            hElem.id = "title" + i
            let imgElem = document.createElement("img")
            imgElem.setAttribute("src", r.articles[i].urlToImage)
-           document.querySelector('#article').append(hElem, imgElem)
+           let linkElem = document.createElement('a')
+           linkElem.setAttribute('href',r.articles[i].url)
+           linkElem.innerHTML = "Click here to read more!"
+           document.querySelector('#article').append(hElem, imgElem, linkElem)
+
           })
 
 // fetch('https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
@@ -37,3 +42,6 @@ console.log("Making images")
 //         btnelem.textContent = input
 //         document.querySelector('#btnDiv').append(btnelem)
 //       }
+
+
+//       var countries = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"]
