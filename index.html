@@ -25,11 +25,20 @@
         <input type="text" id="searchText">
         <p></p>
         <button id="submit">Submit</button>
-        
-        
-    </div>
 
-    <script src="./assets/javascript/travelBuddy.js"></script>
+
+    </div>
+    <script>
+        document.querySelector('#submit').addEventListener('click',
+            e => {
+                e.preventDefault()
+                const searchText = document.querySelector('#searchText').value
+                localStorage.setItem('searchInput', searchText)
+                window.location = "./news.html"
+            })
+    </script>
 </body>
 
 </html>
+
+<!-- string.replace -->
