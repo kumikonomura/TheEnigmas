@@ -14,7 +14,6 @@ e => {
     .then(r => {
       console.log(r.articles[0])
    
-
 for( i=0;  i < 5; i++)
 console.log("Making images")
            let hElem = document.createElement("h5")
