@@ -5,7 +5,7 @@ body {
 }
 
 #landingHeader {
-    margin: 50px;
+    margin: 100px 50px;
     width: auto;
 }
 
@@ -69,8 +69,12 @@ body {
   and (max-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+    #landingHeader {
+        margin-top: 75px;
+    }
+
     .headerContainer {
-        text-align: center !important;
+    text-align: center;
     }    
 
     #searchContainer {
@@ -88,15 +92,20 @@ body {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
     .headerContainer {
-        text-align: center !important;
+        text-align: center;
     }    
+
+    #landingHeader {
+        margin: 50px;
+    }
 
     #searchContainer {
         margin: 50px;
     }
 
     #headTop {
-        font-size: 18px
+        font-size: 18px;
+        text-align: left;
     }
 
     #headBottom {
@@ -105,5 +114,158 @@ body {
 
     #searchLabel {
         font-size: 20px;
+    }
+}
+
+/* iPhone 6/7/8 */
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .headerContainer {
+        text-align: center !important;
+    }    
+
+    #searchContainer {
+        margin-top: 100px;
+    }
+
+    #searchLabel {
+        font-size: 20px;
+    }
+}
+
+
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+    .headerContainer {
+        text-align: center !important;
+    }    
+
+
+    #landingHeader {
+        margin: 65px 50px;
+    }
+
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 40px;
+    }
+
+    #searchContainer {
+        margin: 50px;
+    }
+
+    #searchLabel {
+        font-size: 20px;
+    }
+}
+
+/* iPhone 6/7/8 Plus */
+@media only screen 
+  and (min-width: 414px) 
+  and (max-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+}
+
+@media only screen 
+  and (min-width: 414px) 
+  and (max-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #searchContainer {
+        margin: 70px;
+    }
+}
+
+/* iPhone X  */
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+}
+
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    #searchContainer {
+        margin: 70px;
+    }
+}
+
+/* iPad 1/2/Mini/Air */
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (orientation: portrait) {
+    #landingHeader {
+        margin: 100px 50px;
+    }
+
+    #headTop {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 70px;
+    }
+
+    #searchLabel {
+        font-size: 30px;
+    }
+
+    #submit {
+
+    }
+
+}
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (orientation: landscape) {
+    #landingHeader {
+        margin: 100px 50px;
+    }
+
+    #headTop {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 70px;
+    }
+
+    #searchLabel {
+        font-size: 30px;
+    }
+
+    #submit {
+
     }
 }
