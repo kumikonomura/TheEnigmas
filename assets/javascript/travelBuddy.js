@@ -5,9 +5,6 @@
 // fetch('https://newsapi.org/v2/top-headlines?country=se&apiKey=b3458132a49e43e3a296ebfa66cb04d1')
 // fetch('https://api.exchangeratesapi.io/latest')
 
-document.querySelector('#submit').addEventListener('click',
-e => {
-   e.preventDefault()
   fetch(
     'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=b3458132a49e43e3a296ebfa66cb04d1')
     .then(r => r.json())
@@ -22,7 +19,6 @@ console.log("Making images")
            let imgElem = document.createElement("img")
            imgElem.setAttribute("src", r.articles[i].urlToImage)
            document.querySelector('#article').append(hElem, imgElem)
-          })
           })
 
 // fetch('https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
