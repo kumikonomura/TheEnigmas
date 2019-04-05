@@ -33,6 +33,55 @@ fetch(
 
   })
 
+// document.querySelector('#submit').addEventListener('click',
+// e => {
+//    e.preventDefault()
+//   fetch(
+//     'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=b3458132a49e43e3a296ebfa66cb04d1')
+//     .then(r => r.json())
+//     .then(r => {
+//       document.querySelector('#cityNews').textContent = r.news
+//     })
+// })
+
+fetch('https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
+      .then(r => r.json())
+      .then(({ name, wind, main }) => {
+        console.log(name)
+        document.querySelector('#city').textContent = `${name} City Details`
+        document.querySelector('#wind').textContent = `Wind Speed: ${wind.speed}`
+        document.querySelector('#humidity').textContent = `Humidity: ${main.humidity}`
+        document.querySelector('#temp').textContent = `Temperature (F): ${main.temp}`
+      })
+      const addCity = input => {
+        let btnelem = document.createElement('button')
+        btnelem.className = 'getCity'
+        btnelem.setAttribute('data-city', input)
+        btnelem.textContent = input
+        document.querySelector('#btnDiv').append(btnelem)
+      }
+      
+  fetch(
+    `https://newsapi.org/v2/top-headlines?country=${searchInput}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
+    .then(r => r.json())
+    .then(r => {
+      console.log(r.articles[0])
+      console.log(searchInput)
+   
+for( i=0;  i < 5; i++)
+console.log("Making images")
+           let hElem = document.createElement("h5")
+           hElem.innerHTML = r.articles[i].title
+           hElem.id = "title" + i
+           let imgElem = document.createElement("img")
+           imgElem.setAttribute("src", r.articles[i].urlToImage)
+           let linkElem = document.createElement('a')
+           linkElem.setAttribute('href',r.articles[i].url)
+           linkElem.innerHTML = "Click here to read more!"
+           document.querySelector('#article').append(hElem, imgElem, linkElem)
+
+          })
+
 // fetch('https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
 //       .then(r => r.json())
 //       .then(({ name, wind, main }) => {
