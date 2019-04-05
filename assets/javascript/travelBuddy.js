@@ -27,6 +27,8 @@ fetch(
     imgElem.setAttribute("src", r.articles[i].urlToImage)
     let linkElem = document.createElement('a')
     linkElem.setAttribute('href', r.articles[i].url)
+    // this will open the link in a new browser window
+    linkElem.setAttribute('target', "_blank")
     linkElem.innerHTML = `
     <a style="font-size:18px;">Click here to read full article..</a>`
     document.querySelector('#article').append(hElem, imgElem, contentElem, linkElem)
