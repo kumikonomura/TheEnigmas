@@ -20,6 +20,20 @@ nav {
     font-size: 20px;
 }
 
+#article {
+    display: flow-root;
+    background-color: #ffffff;
+    margin: 100px auto;
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #1a237e;
+}
+
+img {
+    height: 100px;
+    float: right;
+}
+
 /* this is for the menu items on mobile slide navigation */
 /* I can only get the font size to change if I use !imporant */
 .mobileNav {
