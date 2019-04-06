@@ -9,7 +9,7 @@
       document.addEventListener('click', e => {
         e.preventDefault()
         if (e.target.className === 'cityName') {
-            fetch('https://api.openweathermap.org/data/2.5/weather?q,&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
+            fetch('https://api.openweathermap.org/data/2.5/weather?q=Bujumbara,Burundi,&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
             .then(r => r.json())
             .then(({ name, wind, main }) => {
               console.log(name)
