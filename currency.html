@@ -41,8 +41,7 @@
     <div id="grid-container">
         <div id="grid-item">
             <!-- Dropdown Trigger -->
-            <a id="currencydropdown" class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
+            <a id="currencydropdown" class='dropdown-trigger btn' href='#' data-target='dropdown1'></a>
             <!-- Dropdown Structure -->
             <ul id='dropdown1' class='dropdown-content'>
                 <li><a href="#!">USD</a></li>
@@ -77,10 +76,6 @@
             var elems = document.querySelectorAll('.dropdown-trigger');
             var instances = M.Dropdown.init(elems);
         });
-
-      // Or with jQuery
-
-    //   $('.dropdown-trigger').dropdown();
     </script>
 
     <script>
@@ -89,7 +84,8 @@
             var instances = M.Sidenav.init(elems, {});
         });    
     </script>
-    <script src="./assets/javascript/travelBuddy.js"></script>
+    <script src="./assets/javascript/currency.js"></script>
 </body>
 
 </html>
+
