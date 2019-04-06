@@ -84,8 +84,20 @@ body {
     text-align: center;
     }    
 
+    #headBottom {
+        font-size: 40px;
+    }
+
+    .imageContainer {
+        margin-top: 40px;
+    }
+
+    #skyline {
+        width: 70%;
+    }
+
     #searchContainer {
-        margin-top: 100px;
+        margin-top: 60px;
     }
 
     #searchLabel {
@@ -98,16 +110,29 @@ body {
   and (max-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
+    #landingHeader {
+        margin: 35px 50px 10px 50px !important;
+    }
+    
     .headerContainer {
         text-align: center;
     }    
 
-    #landingHeader {
-        margin: 50px;
+    #headTop {
+        font-size: 15px !important;
+    }
+
+
+    #headBottom {
+        font-size: 30px !important;
+    }
+
+    #skyline {
+        width: 40%;
     }
 
     #searchContainer {
-        margin: 50px;
+        margin: 5px !important;
     }
 
     #headTop {
@@ -120,7 +145,18 @@ body {
     }
 
     #searchLabel {
-        font-size: 20px;
+        font-size: 15px !important;
+    }
+
+    #searchText {
+        height: 25px;
+        width: 130px;
+    }
+
+    #submit {
+        font-size: 12px;
+        height: 30px;
+        width: 60px;
     }
 }
 
@@ -135,14 +171,13 @@ body {
     }    
 
     #searchContainer {
-        margin-top: 100px;
+        margin-top: 60px;
     }
 
     #searchLabel {
         font-size: 20px;
     }
 }
-
 
 @media only screen 
   and (min-width: 375px) 
@@ -155,7 +190,7 @@ body {
 
 
     #landingHeader {
-        margin: 65px 50px;
+        margin: 35px 50px 10px 50px !important;
     }
 
     #headTop {
@@ -167,8 +202,12 @@ body {
         font-size: 40px;
     }
 
+    #skyline {
+        width: 45%;
+    }
+
     #searchContainer {
-        margin: 50px;
+        margin: 10px;
     }
 
     #searchLabel {
@@ -193,33 +232,92 @@ body {
   and (max-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) { 
+    #landingHeader {
+        margin: 35px 50px 15px 50px !important;
+    }
+    
     #headTop {
         font-size: 18px;
         text-align: left;
     }
 
+    #headBottom {
+        font-size: 45px;
+    }
+
+    #skyline {
+        width: 45%;
+    }
+
     #searchContainer {
-        margin: 70px;
+        margin: 10px !important;
     }
 }
 
-/* iPhone X  */
+/* iPhone X 
 @media only screen 
   and (min-width: 375px) 
   and (max-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) { 
-}
+} */
 
 @media only screen 
   and (min-width: 375px) 
   and (max-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) { 
+    #landingHeader {
+        margin: 35px 50px 10px 50px !important;
+    }
+    
+    .headerContainer {
+        text-align: center;
+    }    
+
+    #headTop {
+        font-size: 15px !important;
+    }
+
+
+    #headBottom {
+        font-size: 30px !important;
+    }
+
+    #skyline {
+        width: 40%;
+    }
+
     #searchContainer {
-        margin: 70px;
+        margin: 5px !important;
+    }
+
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 40px;
+    }
+
+    #searchLabel {
+        font-size: 15px !important;
+    }
+
+    #searchText {
+        height: 25px;
+        width: 130px;
+    }
+
+    #submit {
+        font-size: 12px;
+        height: 30px;
+        width: 60px;
     }
 }
+
+/* media queries are done up to this point */
 
 /* iPad 1/2/Mini/Air */
 @media only screen 
@@ -243,11 +341,6 @@ body {
     #searchLabel {
         font-size: 30px;
     }
-
-    #submit {
-
-    }
-
 }
 
 @media only screen 
@@ -270,9 +363,5 @@ body {
 
     #searchLabel {
         font-size: 30px;
-    }
-
-    #submit {
-
     }
 }

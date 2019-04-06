@@ -11,7 +11,7 @@ fetch(
   `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
   .then(r => r.json())
   .then(r => {
-    console.log(r.articles[0])
+    console.log(r.articles[0, 1, 2, 3])
     console.log(countryCode)
 
     for (i = 0; i < 5; i++){
