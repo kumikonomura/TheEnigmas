@@ -1,0 +1,367 @@
+body {
+    background-image: url(../images/dust_scratches.png);
+    font-family: 'Harmattan', sans-serif;
+    color:#1a237e;
+}
+
+#landingHeader {
+    margin: 50px auto 30px auto;
+    width: auto;
+}
+
+.headerContainer {
+    /* border: 1px solid; */
+    width: fit-content;
+    margin: auto;
+}
+
+#headTop {
+    font-size: 20px;
+    font-style: italic;
+}
+
+#headBottom {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
+    margin-top: 3px;
+}
+
+.imageContainer {
+    text-align: center;
+}
+
+#skyline {
+    width: 50%;
+}
+
+#searchContainer {
+    /* border: 1px solid; */
+    text-align: center;
+    margin: 25px auto;
+}
+
+#searchLabel {
+    font-size: 22px;
+}
+
+#searchText {
+    margin: 10px 0px;
+    border-radius: 2px;
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+#submit {
+    border-radius: 3px;
+    font-size: 15px;
+    height: 35px;
+    width: 65px;
+    background-color: #1a237e;
+    color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+/* iPhone 5/SE */
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    #landingHeader {
+        margin-top: 75px;
+    }
+
+    .headerContainer {
+    text-align: center;
+    }    
+
+    #headBottom {
+        font-size: 40px;
+    }
+
+    .imageContainer {
+        margin-top: 40px;
+    }
+
+    #skyline {
+        width: 70%;
+    }
+
+    #searchContainer {
+        margin-top: 60px;
+    }
+
+    #searchLabel {
+        font-size: 20px;
+    }
+}
+
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    #landingHeader {
+        margin: 35px 50px 10px 50px !important;
+    }
+    
+    .headerContainer {
+        text-align: center;
+    }    
+
+    #headTop {
+        font-size: 15px !important;
+    }
+
+
+    #headBottom {
+        font-size: 30px !important;
+    }
+
+    #skyline {
+        width: 40%;
+    }
+
+    #searchContainer {
+        margin: 5px !important;
+    }
+
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 40px;
+    }
+
+    #searchLabel {
+        font-size: 15px !important;
+    }
+
+    #searchText {
+        height: 25px;
+        width: 130px;
+    }
+
+    #submit {
+        font-size: 12px;
+        height: 30px;
+        width: 60px;
+    }
+}
+
+/* iPhone 6/7/8 */
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .headerContainer {
+        text-align: center !important;
+    }    
+
+    #searchContainer {
+        margin-top: 60px;
+    }
+
+    #searchLabel {
+        font-size: 20px;
+    }
+}
+
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+    .headerContainer {
+        text-align: center !important;
+    }    
+
+
+    #landingHeader {
+        margin: 35px 50px 10px 50px !important;
+    }
+
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 40px;
+    }
+
+    #skyline {
+        width: 45%;
+    }
+
+    #searchContainer {
+        margin: 10px;
+    }
+
+    #searchLabel {
+        font-size: 20px;
+    }
+}
+
+/* iPhone 6/7/8 Plus */
+@media only screen 
+  and (min-width: 414px) 
+  and (max-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+}
+
+@media only screen 
+  and (min-width: 414px) 
+  and (max-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    #landingHeader {
+        margin: 35px 50px 15px 50px !important;
+    }
+    
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 45px;
+    }
+
+    #skyline {
+        width: 45%;
+    }
+
+    #searchContainer {
+        margin: 10px !important;
+    }
+}
+
+/* iPhone X 
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+} */
+
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    #landingHeader {
+        margin: 35px 50px 10px 50px !important;
+    }
+    
+    .headerContainer {
+        text-align: center;
+    }    
+
+    #headTop {
+        font-size: 15px !important;
+    }
+
+
+    #headBottom {
+        font-size: 30px !important;
+    }
+
+    #skyline {
+        width: 40%;
+    }
+
+    #searchContainer {
+        margin: 5px !important;
+    }
+
+    #headTop {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 40px;
+    }
+
+    #searchLabel {
+        font-size: 15px !important;
+    }
+
+    #searchText {
+        height: 25px;
+        width: 130px;
+    }
+
+    #submit {
+        font-size: 12px;
+        height: 30px;
+        width: 60px;
+    }
+}
+
+/* media queries are done up to this point */
+
+/* iPad 1/2/Mini/Air */
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (orientation: portrait) {
+    #landingHeader {
+        margin: 100px 50px;
+    }
+
+    #headTop {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 70px;
+    }
+
+    #searchLabel {
+        font-size: 30px;
+    }
+}
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (orientation: landscape) {
+    #landingHeader {
+        margin: 100px 50px;
+    }
+
+    #headTop {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    #headBottom {
+        font-size: 70px;
+    }
+
+    #searchLabel {
+        font-size: 30px;
+    }
+}
