@@ -19,15 +19,21 @@
         </div>
     </header>
 
+    <div class="imageContainer">
+        <img id="skyline" src="./assets/images/londonSkyline.png" alt="London Skyline" class="src">
+    </div>
+
     <div id="searchContainer">
-        <label for="searcText" id="searchLabel">Where do you want to go?</label>
+        <label for="searchText" id="searchLabel">Where do you want to go?</label>
         <p></p>
         <input type="text" id="searchText">
         <p></p>
         <button id="submit">Submit</button>
+  </div>
+  
+    <script src="./assets/javascript/travelBuddy.js"></script>
+    <script src="./assets/javascript/weather.js"></script>
 
-
-    </div>
     <script>
         document.querySelector('#submit').addEventListener('click',
             e => {
@@ -40,5 +46,3 @@
 </body>
 
 </html>
-
-<!-- string.replace -->
