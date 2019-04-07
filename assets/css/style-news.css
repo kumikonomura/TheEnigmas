@@ -23,6 +23,7 @@ nav {
 #article {
     display: flow-root;
     background-color: #ffffff;
+    color: black;
     margin: 100px auto;
     width: 65%;
     padding: 10px;
