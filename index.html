@@ -26,7 +26,8 @@
     <div id="searchContainer">
             <label for="searchText" id="searchLabel">Where do you want to go?</label>
             <p></p>
-            <input type="text" list="countries" id="searchText">
+            <input type="text" list="countries" size="5" id="searchText">
+            <!-- country list displayed in dropdown menu -->
             <datalist id="countries">
                 <option value="Argentina">
                 <option value="Austria">
@@ -93,6 +94,7 @@
                 e.preventDefault()
                 const searchText = document.querySelector('#searchText').value
                 localStorage.setItem('searchInput', searchText)
+                // display changes from index page to news page
                 window.location = "./news.html"
             })
     </script>
