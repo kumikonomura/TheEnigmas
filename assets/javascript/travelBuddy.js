@@ -284,8 +284,13 @@ fetch(
   `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
   .then(r => r.json())
   .then(r => {
-    console.log(r.articles[0, 1, 2, 3, 4, 5])
+    console.log(country)
     console.log(countryCode)
+    console.log(r.articles[0])
+    console.log(r.articles[1])
+    console.log(r.articles[2])
+    console.log(r.articles[3])
+    console.log(r.articles[4])
     for (i = 0; i < 5; i++){
       // console.log("Making images")
     let hElem = document.createElement("h5")
