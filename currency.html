@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Currency</title>
+    <title>Travel Buddy - Currency</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,9 +41,9 @@
     <div id="box">
     <table>
             <tr>
-                <td><input id="fromAmount" type="text" size="15" value="1" /></td>
+                <td><input class="browser-default" id="fromAmount" type="text" size="15" value="1"></td>
                 <td>
-                    <select id="from" onchange="convertCurrency();">
+                    <select class="browser-default" id="from" onchange="convertCurrency();">
                         <option value="AUD">Australian Dollar (AUD)</option>
                         <option value="BRL">Brazilian Real (BRL)</option>
                         <option value="BGN">Bulgarian Lev (BGN)</option>
@@ -78,9 +78,9 @@
                 </td>
             </tr>
             <tr>
-                <td><input id="toAmount" type="text" size="15" disabled /></td>
+                <td><input class="browser-default" id="toAmount" type="text" size="15" disabled /></td>
                 <td>
-                    <select id="to">
+                    <select class="browser-default" id="to">
                         <option value="AUD">Australian Dollar (AUD)</option>
                         <option value="BRL">Brazilian Real (BRL)</option>
                         <option value="BGN">Bulgarian Lev (BGN)</option>
@@ -118,13 +118,13 @@
     </div>
 </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-        });    
-    </script>
-    <script src="./assets/javascript/currency.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+    });    
+</script>
+<script src="./assets/javascript/currency.js"></script>
 </body>
 
 </html>

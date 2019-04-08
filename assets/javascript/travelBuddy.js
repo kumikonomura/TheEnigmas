@@ -281,7 +281,7 @@ let getCode = () => {
 
 getCode()
 document.querySelector('#article').innerHTML = `
-<style="font-size:30px; color=red;">
+<span style="font-size:30px; color=red;">
 Top Stories from ${country}
 `
 fetch(
