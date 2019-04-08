@@ -74,6 +74,37 @@ let dayicons = [
 
 ]
 
+// 
+// const addCity = input => {
+//   let btnelem = document.createElement('submit')
+//   btnelem.className = 'getCity'
+//   btnelem.setAttribute('data-city', input)
+//   btnelem.textContent = input
+//   document.querySelector('#btnDiv').append(btnelem)
+// }    
+// document.addEventListener('click', e => {
+//   e.preventDefault()
+//   if (e.target.className === 'cityName') {
+//       fetch('https://api.openweathermap.org/data/2.5/weather?q,&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
+//       .then(r => r.json())
+//       .then(({ name, wind, main }) => {
+//         console.log(name)
+//         document.querySelector('#city').textContent = `${name} City Details`
+//         document.querySelector('#wind').textContent = `Wind Speed: ${wind.speed}`
+//         document.querySelector('#humidity').textContent = `Humidity: ${main.humidity}`
+//         document.querySelector('#temp').textContent = `Temperature (F): ${main.temp}`
+//       })
+//    }
+//  else if (e.target.id === '') {
+//   movies.push(document.querySelector('#movie-input').value)
+//   document.querySelector('#movie-input').value = ''
+//   dispBtns()
+// }
+// })
+
+// linking the submit button
+// adding the API 
+// designing the webpage
 
 // array of country names and codes
 let countryArr = [
@@ -484,7 +515,6 @@ let daysforecast = (city, countrycode) => {
   .catch(e => console.error(e))
 }
 
-
 getCity()
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
@@ -502,4 +532,14 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imper
   .catch(e => console.error(e))
 
 
-
+  .then(({ weather, name, wind, main }) => {
+    console.log(name)
+    console.log(weather)
+    console.log(wind)
+    console.log(main)
+    document.querySelector('#city').textContent = `${name} City Details`
+      document.querySelector('#wind').textContent = `Wind Speed: ${wind.speed}`
+      document.querySelector('#humidity').textContent = `Humidity: ${main.humidity}`
+      document.querySelector('#temp').textContent = `Temperature (F): ${main.temp}`
+    })
+  .catch(e)

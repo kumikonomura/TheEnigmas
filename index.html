@@ -24,19 +24,77 @@
     </div>
 
     <div id="searchContainer">
-        <label for="searchText" id="searchLabel">Where do you want to go?</label>
-        <p></p>
-        <input type="text" id="searchText">
-        <p></p>
-        <button id="submit">Submit</button>
-    </div>
+            <label for="searchText" id="searchLabel">Where do you want to go?</label>
+            <p></p>
+            <input type="text" list="countries" id="searchText">
+            <!-- country list displayed in dropdown menu -->
+            <datalist id="countries">
+                <option value="Argentina">
+                <option value="Austria">
+                <option value="Australia">
+                <option value="Belgium">
+                <option value="Bulgaria">
+                <option value="Brazil">
+                <option value="Canada">
+                <option value="China">
+                <option value="Colombia">
+                <option value="Cuba">
+                <option value="Czechia">
+                <option value="Egypt">
+                <option value="France">
+                <option value="Germany">
+                <option value="Great Britain">
+                <option value="Greece">
+                <option value="Hong Kong">
+                <option value="Hungary">
+                <option value="India">
+                <option value="Indonesia">
+                <option value="Ireland">
+                <option value="Israel">
+                <option value="Italy">
+                <option value="Japan">
+                <option value="Lithuania">
+                <option value="Latvia">
+                <option value="Mexico">
+                <option value="Malaysia">
+                <option value="Morocco">
+                <option value="New Zealand">
+                <option value="Netherlands">
+                <option value="Nigeria">
+                <option value="Norway">
+                <option value="Philippines">
+                <option value="Poland">
+                <option value="Portugal">
+                <option value="Romania">
+                <option value="Russia">
+                <option value="Serbia">
+                <option value="Singapore">
+                <option value="Slovenia">
+                <option value="Slovakia">
+                <option value="South Africa">
+                <option value="South Korea">
+                <option value="Sweden">
+                <option value="Switzerland">
+                <option value="Taiwan">
+                <option value="Thailand">
+                <option value="Turkey">
+                <option value="Ukraine">
+                <option value="United Arab Emirates">
+                <option value="United States">
+                <option value="Venezuela">
+            </datalist>
+            <p></p>
+            <button id="submit">Submit</button>
+        </div>
 
+    <!-- on submit, the selected country name is sent to local storage, will be retrieved in travelBuddy.js page -->
     <script>
         document.querySelector('#submit').addEventListener('click',
             e => {
                 e.preventDefault()
                 const searchText = document.querySelector('#searchText').value
                 localStorage.setItem('searchInput', searchText)
+                // display changes from index page to news page
                 window.location = "./news.html"
             })
     </script>

@@ -1,30 +1,11 @@
 #heading {
     font-size: 40px;
+    text-align:  center;
 }
-#grid-container {
-    grid-gap: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: white;
-    padding: 10px;
-    padding-top: 60px;
-    padding-left: 30px;
-}
-#grid-item {
-    background-color: #2F4F4F;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    font-size: 150px;
-    text-align: center;
-}
-#currencydropdown {
-    width: 100%;
-    margin-top: -115px;
-}
-#grid-item2 {
-    background-color: #2F4F4F;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    font-size: 150px;
-    text-align: center;
+table {
+    height: 78px;
+    width: 389px;
+    margin-left: 384px;
 }
 body {
     background-image: url(../images/dust_scratches.png);
@@ -46,6 +27,9 @@ nav {
 .navItem {
     font-size: 20px;
 }
+
+
+
 
 /* this is for the menu items on mobile slide navigation */
 /* I can only get the font size to change if I use !imporant */
