@@ -1,5 +1,5 @@
 // Click event listener when drop down is clicked
-document.querySelector('#currencydropdown').addEventListener('click', e => {
+document.querySelector('#currencyDropdown').addEventListener('click', e => {
     // prevent page from refresh
     e.preventDefault()
     // Testing = click event listener works!
