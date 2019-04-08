@@ -1,3 +1,79 @@
+// array of weather icons
+let nighticons = [
+  {
+    class: 'fas fa-bolt wiconstyle',
+    description: 'lightning',
+  },
+  {
+    class: 'fas fa-cloud-meatball wiconstyle',
+    description: 'cloudy meatball',
+  },
+  {
+    class: 'fas fa-cloud-moon wiconstyle',
+    description: 'cloudy',
+  },
+  {
+    class: 'fas fa-cloud-moon-rain wiconstyle',
+    description: 'cloudy and rainy',
+  },
+  {
+    class: 'fas fa-meteor wiconstyle',
+    description: 'meteor',
+  },
+]
+
+let dayicons = [
+  {
+    class: 'fas fa-cloud-rain wiconstyle',
+    description: 'light rain',
+  },
+  {
+    class: 'fas fa-cloud-showers-heavy wiconstyle',
+    description: 'heavy rain',
+  },
+  {
+    class: 'fas fa-cloud-sun wiconstyle',
+    description: 'cloudy',
+  },
+  {
+    class: 'fas fa-cloud-sun-rain wiconstyle',
+    description: 'cloudy and suny and rainy',
+  },
+  {
+    class: 'fas fa-meteor wiconstyle',
+    description: 'meteor',
+  },
+  {
+    class: 'fas fa-poo-storm wiconstyle',
+    description: 'thunderstorm',
+  },
+  {
+    class: 'fas fa-rainbow wiconstyle',
+    description: 'rainbow',
+  },
+  {
+    class: 'fas fa-smog wiconstyle',
+    description: 'haze',
+  },
+  {
+    class: 'fas fa-snowflake wiconstyle',
+    description: 'snow',
+  },
+  {
+    class: 'far far-snowflake wiconstyle',
+    description: 'snowy',
+  },
+  {
+    class: 'fas fa-sun wiconstyle',
+    description: 'sunny',
+  },
+  {
+    class: 'far fa-sun wiconstyle',
+    description: 'sunny',
+  },
+
+]
+
 // 
 // const addCity = input => {
 //   let btnelem = document.createElement('submit')
@@ -358,16 +434,104 @@ let cityName = ''
 
 // function to translate country name into country code
 let getCity = () => {
+  if(country === "")
+  {
+    country = 'United States'
+  }
   for (j = 0; j < countryArr.length; j++)
     if (country === countryArr[j].name) {
       cityName = countryArr[j].city
     }
 }
 
+let setweathericon = (description,sunset) => {
+  let night = false
+  let today
+  let epochtime
+  let iconary
+  let iconclass = undefined
+  let iconelem = undefined
+  console.log(description)
+  console.log(sunset)
+  today = new Date();
+  epochtime = today.valueOf()/1000
+  night = (epochtime > sunset)?1:0
+  iconary = night?nighticons:dayicons
+  console.log(iconary)
+  for(let i=0;i<iconary.length;i++)
+  {
+    if(description === iconary[i].description)
+    {
+      iconclass = iconary[i].class
+      break
+    }
+  }
+  if(iconclass == undefined)
+  {
+    iconclass = night?('fas fa-cloud-moon wiconstyle'):('fas fa-sun wiconstyle')
+  }
+  console.log(iconclass)
+  iconelem = document.getElementById('weather-icon')
+  iconelem.setAttribute('class',`${iconclass}`)
+}
+
+let populate_day_forecast = (data,index) => {
+     let iconary = dayicons
+     let iconclass = undefined
+     console.log(data)
+     let dayelem = document.getElementById(`day${index}`)
+     let iconelem = document.getElementById(`day${index}_icon`)
+     let tempelem = document.getElementById(`day${index}_temp`)
+     dayelem.textContent = moment(data.dt,'X').format("ddd")
+     console.log(moment(data.dt,'X').format("dddd"))
+     for(let i=0;i<iconary.length;i++)
+     {
+       if(data.weather.description === iconary[i].description)
+       {
+         iconclass = iconary[i].class
+         break
+       }
+     }
+     if(iconclass == undefined)
+     {
+       iconclass = 'fas fa-sun wiconstyle'
+     }
+     console.log(iconclass)
+    //  iconelem = document.getElementById('weather-icon')
+     iconelem.setAttribute('class',`${iconclass}`)
+     console.log(data.main.temp_max)
+     console.log(data.main.temp_min)
+     tempelem.textContent = `${data.main.temp_min}  ${data.main.temp_max}`
+   }
+
+let daysforecast = (city, countrycode) => {
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${countrycode}&cnt=5&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
+  .then(r => r.json())
+  .then(weatherdata => {
+    for(let i=0;i<5;i++) {
+      populate_day_forecast(weatherdata.list[i],(i+1))
+    }
+  })
+  .catch(e => console.error(e))
+}
+
 getCity()
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
   .then(r => r.json())
+  .then(({ weather, name, wind, main, clouds, sys }) => {
+      document.querySelector('#cityname').textContent = `${name},${sys.country}`
+      document.querySelector('#Precipitation').textContent = `Precipitation: ${clouds.all}%`
+      document.querySelector('#Wind').textContent = `Wind: ${wind.speed}mph`
+      document.querySelector('#Humidity').textContent = `Humidity: ${main.humidity}%`
+      document.querySelector('#weather-desc').textContent = `${weather[0].description}`
+      document.querySelector('#weather-info').textContent = `Temp (F): ${main.temp}`
+      setweathericon(`${weather[0].description}`,`${sys.sunset}`)
+      daysforecast(`${cityName}`,`${sys.country}`)
+    })
+  .catch(e => console.error(e))
+
+
   .then(({ weather, name, wind, main }) => {
     console.log(name)
     console.log(weather)
