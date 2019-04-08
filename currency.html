@@ -38,12 +38,11 @@
         </ul>
     </header>
     <p id="heading">Currency Converter</p>
-    <div id="box">
     <table>
             <tr>
-                <td><input id="fromAmount" type="text" size="15" value="1" /></td>
+                <td><input class="browser-default" id="fromAmount" type="text" size="15" value="1" /></td>
                 <td>
-                    <select id="from" onchange="convertCurrency();">
+                    <select class="browser-default" id="from" onchange="convertCurrency();">
                         <option value="AUD">Australian Dollar (AUD)</option>
                         <option value="BRL">Brazilian Real (BRL)</option>
                         <option value="BGN">Bulgarian Lev (BGN)</option>
@@ -78,9 +77,9 @@
                 </td>
             </tr>
             <tr>
-                <td><input id="toAmount" type="text" size="15" disabled /></td>
+                <td><input class="browser-default" id="toAmount" type="text" size="15" disabled /></td>
                 <td>
-                    <select id="to">
+                    <select class="browser-default" id="to" onchange="convertCurrency();">
                         <option value="AUD">Australian Dollar (AUD)</option>
                         <option value="BRL">Brazilian Real (BRL)</option>
                         <option value="BGN">Bulgarian Lev (BGN)</option>
@@ -110,7 +109,7 @@
                         <option value="CHF">Swiss Franc (CHF)</option>
                         <option value="THB">Thai Baht (THB)</option>
                         <option value="TRY">Turkish Iira (TRY)</option>
-                        <option value="USD" selected>United States Dollar (USD)</option>
+                        <option value="USD">United States Dollar (USD)</option>
                     </select>
                 </td>
             </tr>
