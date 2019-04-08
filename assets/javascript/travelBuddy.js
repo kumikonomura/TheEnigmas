@@ -37,7 +37,7 @@ let countryArr = [
 
   {
     name: 'China',
-    code: 'ch',
+    code: 'cn',
   },
 
   {
@@ -280,6 +280,10 @@ let getCode = () => {
 }
 
 getCode()
+document.querySelector('#article').innerHTML = `
+<style="font-size:30px; color=red;">
+Top Stories from ${country}
+`
 fetch(
   `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=b3458132a49e43e3a296ebfa66cb04d1`)
   .then(r => r.json())
@@ -294,7 +298,10 @@ fetch(
     for (i = 0; i < 5; i++){
       // console.log("Making images")
     let hElem = document.createElement("h5")
-    hElem.innerHTML = r.articles[i].title
+    hElem.innerHTML = `
+    <h5 style="margin:2rem 0 .656rem 0; border-top:1px solid grey; padding-top:30px;">
+    ${r.articles[i].title}
+    `
     hElem.id = "title" + i
     let contentElem = document.createElement("p")
     contentElem.innerHTML = `
@@ -307,7 +314,7 @@ fetch(
     // this will open the link in a new browser window
     linkElem.setAttribute('target', "_blank")
     linkElem.innerHTML = `
-    <a style="font-size:18px;">Click here to read full article..</a>`
+    <a style="font-size:18px; color: blue;">Click here to read full article...</a>`
     document.querySelector('#article').append(hElem, imgElem, contentElem, linkElem)
     }
   })
