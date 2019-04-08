@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Currency</title>
+    <title>Travel Buddy - Currency</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -40,7 +40,7 @@
     <p id="heading">Currency Converter</p>
     <table>
             <tr>
-                <td><input class="browser-default" id="fromAmount" type="text" size="15" value="1" /></td>
+                <td><input class="browser-default" id="fromAmount" type="text" size="15" value="1"></td>
                 <td>
                     <select class="browser-default" id="from" onchange="convertCurrency();">
                         <option value="AUD">Australian Dollar (AUD)</option>
@@ -117,13 +117,13 @@
     </div>
 </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-        });    
-    </script>
-    <script src="./assets/javascript/currency.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+    });    
+</script>
+<script src="./assets/javascript/currency.js"></script>
 </body>
 
 </html>

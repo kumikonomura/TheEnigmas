@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather</title>
+    <title>Travel Buddy - Weather</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Harmattan" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style-weather.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 </head>
 <body>
   <header>
@@ -32,13 +33,75 @@
                         <li><a href="./index.html" class="mobileNav white-text">New Search</a></li>
                 </ul>
             </header>
-  
-  
-    <div id="container">
-        <div id="column1">
-            <button onclick="temperature()">Temperature</button>
+    <div class="container">
+        <div class="row s12">
+            <div class="col s12 m6 l6">
+                <div class="row left-align">
+                    <h3 id="cityname"></h3>
+                    <h5 id="weather-desc"></h5>
+                </div>
+                <div class="row left-align">
+                    <div class="col s4">
+                        <i id="weather-icon"></i>
+                        <!-- <i class='fas fa-cloud-moon' style='font-size:48px;color:cornflowerblue'></i> -->
+                    </div>
+                    <div class="col s8">
+                        <h5 id="weather-info"></h5>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                </div>
+                <div class="row">                   
+                </div> -->
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="row">
+                    <h3 id="dummy name"></h3>
+                    <h5 id="weather-desc-dummy"></h5>                                                
+                </div>
+                <div class="row center-align">
+                    <h5 id="Precipitation"></h5>
+                    <h5 id="Humidity"></h5>
+                    <h5 id="Wind"></h5>
+                </div>
+                <!-- <div class="row"> 
+                </div>
+                <div class="row">
+                </div>     -->
+            </div>
+        </div>
+        <div class="row s12">
+            <div class="col s12 m1 l1"></div>
+            <div class="col s12 m2 l2">
+                <h5 id="day1"></h5>
+                <i id="day1_icon"></i>
+                <h5 id="day1_temp"></h5>
+            </div>
+            <div class="col s12 m2 l2">
+                <h5 id="day2"></h5>
+                <i id="day2_icon"></i>
+                <h5 id="day2_temp"></h5>    
+            </div>
+            <div class="col s12 m2 l2">
+                <h5 id="day3"></h5>
+                <i id="day3_icon"></i>
+                <h5 id="day3_temp"></h5>    
+            </div>
+            <div class="col s12 m2 l2">
+                <h5 id="day4"></h5>
+                <i id="day4_icon"></i>
+                <h5 id="day4_temp"></h5>    
+            </div>
+            <div class="col s12 m2 l2">
+                <h5 id="day5"></h5>
+                <i id="day5_icon"></i>
+                <h5 id="day5_temp"></h5>    
+            </div>
+            <div class="col s12 m1 l1"></div>
+        </div>
+                <!-- <button onclick="temperature()">Temperature</button>
             <button onclick="precipitation()">Precipitation</button>
-            <!-- <button onclick="wind()">Wind</button> -->
+            <button onclick="wind()">Wind</button>
             <div id="city"></div>
             <div id="wind"></div>
             <div id="humidity"></div>
@@ -48,9 +111,10 @@
             <div id="row1">
                 <h2>5 Day Forecast</h2>
             </div>
-        </div>
+        </div> -->
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="./assets/javascript/weather.js"></script>
 </body>
 </html>
