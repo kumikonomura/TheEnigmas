@@ -86,12 +86,14 @@
         <button id="submit">Submit</button>
     </div>
 
+    <!-- on submit, the selected country name is sent to local storage, will be retrieved in travelBuddy.js page -->
     <script>
         document.querySelector('#submit').addEventListener('click',
             e => {
                 e.preventDefault()
                 const searchText = document.querySelector('#searchText').value
                 localStorage.setItem('searchInput', searchText)
+                // display changes from index page to news page
                 window.location = "./news.html"
             })
     </script>
