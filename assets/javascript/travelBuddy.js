@@ -16,7 +16,7 @@ let countryArr = [
   },
 
   {
-    name: 'Belguim',
+    name: 'Belgium',
     code: 'be',
   },
 
