@@ -19,7 +19,7 @@
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons white-text text-white">menu</i></a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
                             <li><a href="./news.html" class="navItem white-text text-white">News</a></li>
-                            <li><a href="./weather.html" class="navItem white-text text-white">Weather</a></li>
+                            <li><a id="weather" href="./weather.html" class="navItem white-text text-white">Weather</a></li>
                             <li><a href="./currency.html" class="navItem white-text text-white">Currency</a></li>
                             <li><a href="./index.html" class="navItem white-text text-white">New Search</a></li>
                         </ul>
@@ -28,7 +28,7 @@
         
                 <ul class="sidenav indigo darken-4" id="mobile-demo">
                         <li><a href="./news.html" class="mobileNav white-text">News</a></li>
-                        <li><a href="./weather.html" class="mobileNav white-text">Weather</a></li>
+                        <li><a id="weather" href="./weather.html" class="mobileNav white-text">Weather</a></li>
                         <li><a href="./currency.html" class="mobileNav white-text">Currency</a></li>
                         <li><a href="./index.html" class="mobileNav white-text">New Search</a></li>
                 </ul>
@@ -113,6 +113,12 @@
             </div>
         </div> -->
     </div>
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems, {});
+            });    
+        </script>        
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="./assets/javascript/weather.js"></script>

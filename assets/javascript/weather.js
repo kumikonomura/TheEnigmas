@@ -72,40 +72,7 @@ let dayicons = [
     description: 'sunny',
   },
 
-]
-
-// 
-// const addCity = input => {
-//   let btnelem = document.createElement('submit')
-//   btnelem.className = 'getCity'
-//   btnelem.setAttribute('data-city', input)
-//   btnelem.textContent = input
-//   document.querySelector('#btnDiv').append(btnelem)
-// }    
-// document.addEventListener('click', e => {
-//   e.preventDefault()
-//   if (e.target.className === 'cityName') {
-//       fetch('https://api.openweathermap.org/data/2.5/weather?q,&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
-//       .then(r => r.json())
-//       .then(({ name, wind, main }) => {
-//         console.log(name)
-//         document.querySelector('#city').textContent = `${name} City Details`
-//         document.querySelector('#wind').textContent = `Wind Speed: ${wind.speed}`
-//         document.querySelector('#humidity').textContent = `Humidity: ${main.humidity}`
-//         document.querySelector('#temp').textContent = `Temperature (F): ${main.temp}`
-//       })
-//    }
-//  else if (e.target.id === '') {
-//   movies.push(document.querySelector('#movie-input').value)
-//   document.querySelector('#movie-input').value = ''
-//   dispBtns()
-// }
-// })
-
-// linking the submit button
-// adding the API 
-// designing the webpage
-
+]  
 // array of country names and codes
 let countryArr = [
   {
@@ -127,7 +94,7 @@ let countryArr = [
   },
 
   {
-    name: 'Belguim',
+    name: 'Belgium',
     code: 'be',
     city: 'Brussels',
   },
@@ -443,7 +410,7 @@ let getCity = () => {
       cityName = countryArr[j].city
     }
 }
-
+// creating function for the weather icon to dislay in page
 let setweathericon = (description,sunset) => {
   let night = false
   let today
@@ -475,10 +442,12 @@ let setweathericon = (description,sunset) => {
   iconelem.setAttribute('class',`${iconclass}`)
 }
 
+// creating 5 day forecast 
 let populate_day_forecast = (data,index) => {
      let iconary = dayicons
      let iconclass = undefined
      console.log(data)
+     console.log(index)
      let dayelem = document.getElementById(`day${index}`)
      let iconelem = document.getElementById(`day${index}_icon`)
      let tempelem = document.getElementById(`day${index}_temp`)
@@ -503,7 +472,7 @@ let populate_day_forecast = (data,index) => {
      console.log(data.main.temp_min)
      tempelem.textContent = `${data.main.temp_min}  ${data.main.temp_max}`
    }
-
+// function to fetch 5 day forecast based on selected city
 let daysforecast = (city, countrycode) => {
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${countrycode}&cnt=5&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
   .then(r => r.json())
@@ -512,34 +481,25 @@ let daysforecast = (city, countrycode) => {
       populate_day_forecast(weatherdata.list[i],(i+1))
     }
   })
+  console.log(weatherdata.list)
   .catch(e => console.error(e))
 }
-
+// calling the function to get city
 getCity()
-
+// fetching the info from weather page
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
   .then(r => r.json())
-  .then(({ weather, name, wind, main, clouds, sys }) => {
+  .then(({ weather, name, wind, main, rain, sys }) => {
       document.querySelector('#cityname').textContent = `${name},${sys.country}`
-      document.querySelector('#Precipitation').textContent = `Precipitation: ${clouds.all}%`
+      document.querySelector('#Precipitation').textContent = `Precipitation: ${rain || '0'}%`
       document.querySelector('#Wind').textContent = `Wind: ${wind.speed}mph`
       document.querySelector('#Humidity').textContent = `Humidity: ${main.humidity}%`
       document.querySelector('#weather-desc').textContent = `${weather[0].description}`
       document.querySelector('#weather-info').textContent = `Temp (F): ${main.temp}`
+     // calling the function to set the weather icon
       setweathericon(`${weather[0].description}`,`${sys.sunset}`)
+     //  calling the function to set days forecast
       daysforecast(`${cityName}`,`${sys.country}`)
     })
   .catch(e => console.error(e))
 
-
-  .then(({ weather, name, wind, main }) => {
-    console.log(name)
-    console.log(weather)
-    console.log(wind)
-    console.log(main)
-    document.querySelector('#city').textContent = `${name} City Details`
-      document.querySelector('#wind').textContent = `Wind Speed: ${wind.speed}`
-      document.querySelector('#humidity').textContent = `Humidity: ${main.humidity}`
-      document.querySelector('#temp').textContent = `Temperature (F): ${main.temp}`
-    })
-  .catch(e)

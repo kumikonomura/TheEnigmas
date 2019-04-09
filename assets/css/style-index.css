@@ -317,8 +317,6 @@ body {
     }
 }
 
-/* media queries are done up to this point */
-
 /* iPad 1/2/Mini/Air */
 @media only screen 
   and (min-width: 768px) 
