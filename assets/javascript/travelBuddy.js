@@ -276,6 +276,8 @@ let getCode = () => {
   for (j = 0; j < countryArr.length; j++)
   if (country === countryArr[j].name) {
     countryCode = countryArr[j].code
+  } else if (country === '') {
+    country = 'United States'
   }
 }
 

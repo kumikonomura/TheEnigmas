@@ -37,6 +37,29 @@ nav {
     font-size: 20px !important;
 }
 
+#heading {
+    margin: 50px auto 50px auto;
+}
+
+table {
+    margin: auto;
+    padding: 50px;
+}
+
+input {
+    height: 3rem;
+    border: 1px solid #1a237e;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+select {
+    border: 1px solid #1a237e;
+}
+
 /* iPhone 5/SE */
 @media only screen 
   and (min-width: 320px) 
