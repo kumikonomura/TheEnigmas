@@ -16,6 +16,7 @@
 
 <body>
     <header>
+        <!-- navbar -->
         <nav>
             <div class="nav-wrapper indigo darken-4">
                 <a href="./index.html" class="brand-logo white-text text-white">Travel Buddy</a>
@@ -23,16 +24,18 @@
                         class="material-icons white-text text-white">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="./news.html" class="navItem white-text text-white">News</a></li>
-                    <li><a href="./weather.html" class="navItem white-text text-white">Weather</a></li>
+                    <li><a id="weather" href="./weather.html" class="navItem white-text text-white">Weather</a></li>
                     <li><a href="./currency.html" class="navItem white-text text-white">Currency</a></li>
                     <li><a href="./index.html" class="navItem white-text text-white">New Search</a></li>
                 </ul>
             </div>
+
         </nav>
 
+        <!-- menu items for mobile navbar -->
         <ul class="sidenav indigo darken-4" id="mobile-demo">
             <li><a href="./news.html" class="mobileNav white-text">News</a></li>
-            <li><a href="./weather.html" class="mobileNav white-text">Weather</a></li>
+            <li><a id="weather" href="./weather.html" class="mobileNav white-text">Weather</a></li>
             <li><a href="./currency.html" class="mobileNav white-text">Currency</a></li>
             <li><a href="./index.html" class="mobileNav white-text">New Search</a></li>
         </ul>
@@ -117,14 +120,92 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, {});
-    });    
-</script>
-<script src="./assets/javascript/currency.js"></script>
+        <tr>
+            <td><input class="browser-default" id="fromAmount" type="text" size="15" value="1"></td>
+            <td>
+                <select class="browser-default" id="from" onchange="convertCurrency();">
+                    <option value="AUD">Australian Dollar (AUD)</option>
+                    <option value="BRL">Brazilian Real (BRL)</option>
+                    <option value="BGN">Bulgarian Lev (BGN)</option>
+                    <option value="CAD">Canadian Dollar (CAD)</option>
+                    <option value="CNY">Chinese Yuan (CNY)</option>
+                    <option value="HRK">Croatian Kuna (HRK)</option>
+                    <option value="CZK">Czech Koruna (CZK)</option>
+                    <option value="DKK">Danish Krone (DKK)</option>
+                    <option value="HKY">Hong Kong Dollar (HKY)</option>
+                    <option value="HUF">Hungarian Forint (HUF)</option>
+                    <option value="ISK">Icelandic Króna (ISK) </option>
+                    <option value="INR">Indian Rupee (INR)</option>
+                    <option value="IDR">Indonesian Rupiah (IDR)</option>
+                    <option value="ILS">Israeli New Shekel (ILS)</option>
+                    <option value="JPY">Japanese Yen (JPY)</option>
+                    <option value="NZD">New Zealand Dollar (NZD)</option>
+                    <option value="NOK">Norwegian Krone (NOK)</option>
+                    <option value="PHP">Philippine Piso (PHP)</option>
+                    <option value="PLN">Poland Złoty (PLN)</option>
+                    <option value="GBP">Pound Sterling (GBP)</option>
+                    <option value="RON">Romanian Leu (RON)</option>
+                    <option value="RUB">Russian Ruble (RUB)</option>
+                    <option value="SGD">Singapore Dollar (SGD)</option>
+                    <option value="ZAR">South African Rand (ZAR)</option>
+                    <option value="KRW">South Korean Won (KRW)</option>
+                    <option value="SEK">Swedish Krona (SEK)</option>
+                    <option value="CHF">Swiss Franc (CHF)</option>
+                    <option value="THB">Thai Baht (THB)</option>
+                    <option value="TRY">Turkish Iira (TRY)</option>
+                    <option value="USD" selected>United States Dollar (USD)</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="browser-default" id="toAmount" type="text" size="15" disabled /></td>
+            <td>
+                <select class="browser-default" id="to" onchange="convertCurrency();">
+                    <option value="AUD">Australian Dollar (AUD)</option>
+                    <option value="BRL">Brazilian Real (BRL)</option>
+                    <option value="BGN">Bulgarian Lev (BGN)</option>
+                    <option value="CAD">Canadian Dollar (CAD)</option>
+                    <option value="CNY">Chinese Yuan (CNY)</option>
+                    <option value="HRK">Croatian Kuna (HRK)</option>
+                    <option value="CZK">Czech Koruna (CZK)</option>
+                    <option value="DKK">Danish Krone (DKK)</option>
+                    <option value="HKY">Hong Kong Dollar (HKY)</option>
+                    <option value="HUF">Hungarian Forint (HUF)</option>
+                    <option value="ISK">Icelandic Króna (ISK) </option>
+                    <option value="INR">Indian Rupee (INR)</option>
+                    <option value="IDR">Indonesian Rupiah (IDR)</option>
+                    <option value="ILS">Israeli New Shekel (ILS)</option>
+                    <option value="JPY">Japanese Yen (JPY)</option>
+                    <option value="NZD">New Zealand Dollar (NZD)</option>
+                    <option value="NOK">Norwegian Krone (NOK)</option>
+                    <option value="PHP">Philippine Piso (PHP)</option>
+                    <option value="PLN">Poland Złoty (PLN)</option>
+                    <option value="GBP">Pound Sterling (GBP)</option>
+                    <option value="RON">Romanian Leu (RON)</option>
+                    <option value="RUB">Russian Ruble (RUB)</option>
+                    <option value="SGD">Singapore Dollar (SGD)</option>
+                    <option value="ZAR">South African Rand (ZAR)</option>
+                    <option value="KRW">South Korean Won (KRW)</option>
+                    <option value="SEK">Swedish Krona (SEK)</option>
+                    <option value="CHF">Swiss Franc (CHF)</option>
+                    <option value="THB">Thai Baht (THB)</option>
+                    <option value="TRY">Turkish Iira (TRY)</option>
+                    <option value="USD">United States Dollar (USD)</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+        });    
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/javascript/currency.js"></script>
 </body>
 
 </html>
-

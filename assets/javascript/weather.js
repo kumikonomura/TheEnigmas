@@ -72,7 +72,7 @@ let dayicons = [
     description: 'sunny',
   },
 
-]
+]  
 // array of country names and codes
 let countryArr = [
   {
