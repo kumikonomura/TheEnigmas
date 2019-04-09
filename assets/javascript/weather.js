@@ -6,15 +6,15 @@ let nighticons = [
   },
   {
     class: 'fas fa-cloud-meatball wiconstyle',
-    description: 'cloudy meatball',
+    description: 'heavy clouds',
   },
   {
     class: 'fas fa-cloud-moon wiconstyle',
-    description: 'cloudy',
+    description: 'few clouds',
   },
   {
     class: 'fas fa-cloud-moon-rain wiconstyle',
-    description: 'cloudy and rainy',
+    description: 'rain showers clouds',
   },
   {
     class: 'fas fa-meteor wiconstyle',
@@ -33,7 +33,7 @@ let dayicons = [
   },
   {
     class: 'fas fa-cloud-sun wiconstyle',
-    description: 'cloudy',
+    description: 'few clouds',
   },
   {
     class: 'fas fa-cloud-sun-rain wiconstyle',
@@ -56,6 +56,10 @@ let dayicons = [
     description: 'haze',
   },
   {
+    class: 'fas fa-smog wiconstyle',
+    description: 'mist',
+  },
+  {
     class: 'fas fa-snowflake wiconstyle',
     description: 'snow',
   },
@@ -65,7 +69,7 @@ let dayicons = [
   },
   {
     class: 'fas fa-sun wiconstyle',
-    description: 'sunny',
+    description: 'sky is clear',
   },
   {
     class: 'far fa-sun wiconstyle',
@@ -420,46 +424,55 @@ let setweathericon = (description,sunset) => {
   let iconelem = undefined
   console.log(description)
   console.log(sunset)
+  // fetching current time
   today = new Date();
   epochtime = today.valueOf()/1000
-  night = (epochtime > sunset)?1:0
+  // Declaring night,if current time is greater than sunset and selecting corresponding icon array
+  night = (epochtime > sunset)?true:0
   iconary = night?nighticons:dayicons
   console.log(iconary)
   for(let i=0;i<iconary.length;i++)
   {
+    //console.log(description)
+    //console.log(iconary[i].description)
     if(description === iconary[i].description)
     {
       iconclass = iconary[i].class
       break
     }
   }
+  // Declaring default image,if iconclass is undefined
   if(iconclass == undefined)
   {
     iconclass = night?('fas fa-cloud-moon wiconstyle'):('fas fa-sun wiconstyle')
   }
   console.log(iconclass)
+  // Assigning iconclass to weather icon element
   iconelem = document.getElementById('weather-icon')
   iconelem.setAttribute('class',`${iconclass}`)
 }
 
-// creating 5 day forecast 
+// populating 5 day forecast 
 let populate_day_forecast = (data,index) => {
      let iconary = dayicons
      let iconclass = undefined
-     console.log(data)
-     console.log(index)
      let dayelem = document.getElementById(`day${index}`)
      let iconelem = document.getElementById(`day${index}_icon`)
      let tempelem = document.getElementById(`day${index}_temp`)
-     dayelem.textContent = moment(data.dt,'X').format("ddd")
-     console.log(moment(data.dt,'X').format("dddd"))
+     //Setting the day of the week 
+     //Using the moment.js method to get the day of the week by passing the UNIX time(data.dt)
+     dayelem.textContent = moment(data.dt,"X").format("ddd")
+     //console.log(data.dt)
+     //console.log(moment(data.dt,"X").format("ddd"))
      for(let i=0;i<iconary.length;i++)
      {
-       if(data.weather.description === iconary[i].description)
-       {
-         iconclass = iconary[i].class
-         break
-       }
+        //console.log(data.weather[0].description)
+        //console.log(iconary[i].description)
+        if(data.weather[0].description === iconary[i].description)
+        {
+          iconclass = iconary[i].class
+          break
+        }
      }
      if(iconclass == undefined)
      {
@@ -468,20 +481,21 @@ let populate_day_forecast = (data,index) => {
      console.log(iconclass)
     //  iconelem = document.getElementById('weather-icon')
      iconelem.setAttribute('class',`${iconclass}`)
-     console.log(data.main.temp_max)
-     console.log(data.main.temp_min)
-     tempelem.textContent = `${data.main.temp_min}  ${data.main.temp_max}`
+     console.log(data.temp.max)
+     console.log(data.temp.min)
+     tempelem.textContent = `${data.temp.min}  ${data.temp.max}`
    }
 // function to fetch 5 day forecast based on selected city
 let daysforecast = (city, countrycode) => {
-  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${countrycode}&cnt=5&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city},${countrycode}&cnt=5&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
   .then(r => r.json())
   .then(weatherdata => {
+    // Now populate the 5 day forecast by parsing the returned weatherdata.list array
     for(let i=0;i<5;i++) {
       populate_day_forecast(weatherdata.list[i],(i+1))
     }
+    //console.log(weatherdata.list)
   })
-  console.log(weatherdata.list)
   .catch(e => console.error(e))
 }
 // calling the function to get city
