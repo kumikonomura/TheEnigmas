@@ -73,7 +73,6 @@ let dayicons = [
   },
 
 ]
-
 // 
 // const addCity = input => {
 //   let btnelem = document.createElement('submit')

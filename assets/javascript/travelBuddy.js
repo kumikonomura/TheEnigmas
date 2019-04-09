@@ -305,7 +305,7 @@ fetch(
     hElem.id = "title" + i
     let contentElem = document.createElement("p")
     contentElem.innerHTML = `
-    <p style="font-size:18px; padding-bottom: 10px;">${r.articles[i].content}</p>
+    <p style="font-size:18px; padding-bottom: 10px; min-height: 125px;">${r.articles[i].content}</p>
     `
     let imgElem = document.createElement("img")
     imgElem.setAttribute("src", r.articles[i].urlToImage)
