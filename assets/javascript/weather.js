@@ -479,6 +479,7 @@ let populate_day_forecast = (data,index) => {
      let iconary = dayicons
      let iconclass = undefined
      console.log(data)
+     console.log(index)
      let dayelem = document.getElementById(`day${index}`)
      let iconelem = document.getElementById(`day${index}_icon`)
      let tempelem = document.getElementById(`day${index}_temp`)
