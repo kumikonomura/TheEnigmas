@@ -40,11 +40,13 @@
             <li><a href="./index.html" class="mobileNav white-text">New Search</a></li>
         </ul>
     </header>
+
     <body>
-    <p id="heading">Currency Converter</p>
-    <table>
+        <p id="heading">Currency Converter</p>
+        <table>
             <tr>
-                <td><input class="browser-default" id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency();"></td>
+                <td><input class="browser-default" id="fromAmount" type="text" size="15" value="1"
+                        onkeyup="convertCurrency();"></td>
                 <td>
                     <select class="browser-default" id="from" onchange="convertCurrency();">
                         <option value="AUD">Australian Dollar (AUD)</option>
@@ -61,7 +63,7 @@
                         <option value="INR">Indian Rupee (INR)</option>
                         <option value="IDR">Indonesian Rupiah (IDR)</option>
                         <option value="ILS">Israeli New Shekel (ILS)</option>
-                        <option value="JPY">Japanese Yen (JPY)</option>             
+                        <option value="JPY">Japanese Yen (JPY)</option>
                         <option value="NZD">New Zealand Dollar (NZD)</option>
                         <option value="NOK">Norwegian Krone (NOK)</option>
                         <option value="PHP">Philippine Piso (PHP)</option>
@@ -98,7 +100,7 @@
                         <option id="INR" value="INR">Indian Rupee (INR)</option>
                         <option id="IDR" value="IDR">Indonesian Rupiah (IDR)</option>
                         <option id="ILS" value="ILS">Israeli New Shekel (ILS)</option>
-                        <option id="JPY" value="JPY">Japanese Yen (JPY)</option>             
+                        <option id="JPY" value="JPY">Japanese Yen (JPY)</option>
                         <option id="NZD" value="NZD">New Zealand Dollar (NZD)</option>
                         <option id="NOK" value="NOK">Norwegian Krone (NOK)</option>
                         <option id="PHP" value="PHP">Philippine Piso (PHP)</option>
@@ -118,16 +120,15 @@
                 </td>
             </tr>
         </table>
-    </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.sidenav');
-        // var instances = M.Sidenav.init(elems, {});
-    });    
-</script>
-<script src="./assets/javascript/currency.js"></script>
-</body>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems, {});
+            });    
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/javascript/currency.js"></script>
+    </body>
 
 </html>
