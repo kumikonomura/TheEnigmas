@@ -510,9 +510,13 @@ getCity()
 // fetching the info from weather page
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
   .then(r => r.json())
-  .then(({ weather, name, wind, main, rain, sys }) => {
+  .then(({ weather, name, wind, main, clouds , sys }) => {
       document.querySelector('#cityname').textContent = `${name},${sys.country}`
-      document.querySelector('#Precipitation').textContent = `Precipitation: ${rain || '0'}%`
+      if(weather[0].main === "Rain")
+        document.querySelector('#Precipitation').textContent = `Precipitation: ${clouds.all}%`
+      else
+        document.querySelector('#Precipitation').textContent = "Precipitation: 0%"
+      // document.querySelector('#Precipitation').textContent = `Precipitation: ${rain || '0'}%`
       document.querySelector('#Wind').textContent = `Wind: ${wind.speed}mph`
       document.querySelector('#Humidity').textContent = `Humidity: ${main.humidity}%`
       document.querySelector('#weather-desc').textContent = `${weather[0].description}`
