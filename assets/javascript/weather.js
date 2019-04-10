@@ -36,6 +36,10 @@ let dayicons = [
     description: 'few clouds',
   },
   {
+    class: 'fas fa-cloud-sun wiconstyle',
+    description: 'overcast clouds',
+  },
+  {
     class: 'fas fa-cloud-sun-rain wiconstyle',
     description: 'cloudy and suny and rainy',
   },
@@ -124,7 +128,7 @@ let countryArr = [
   {
     name: 'China',
     code: 'cn',
-    city: 'Beiging',
+    city: 'Beijing',
   },
 
   {
@@ -402,6 +406,7 @@ let countryArr = [
 let country = localStorage.getItem('searchInput')
 // cityName variable is defined
 let cityName = ''
+let countryCode = ''
 
 // function to translate country name into country code
 let getCity = () => {
@@ -409,10 +414,12 @@ let getCity = () => {
   {
     country = 'United States'
   }
-  for (j = 0; j < countryArr.length; j++)
+  for (j = 0; j < countryArr.length; j++){
     if (country === countryArr[j].name) {
       cityName = countryArr[j].city
+      countryCode = countryArr[j].code
     }
+  }
 }
 
 console.log(cityName)
@@ -490,12 +497,12 @@ let populate_day_forecast = (data,index) => {
    }
 // function to fetch 5 day forecast based on selected city
 let daysforecast = (city, countrycode) => {
-  fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city},${countrycode}&cnt=5&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city},${countrycode}&cnt=6&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
   .then(r => r.json())
   .then(weatherdata => {
     // Now populate the 5 day forecast by parsing the returned weatherdata.list array
-    for(let i=0;i<5;i++) {
-      populate_day_forecast(weatherdata.list[i],(i+1))
+    for(let i=1;i<6;i++) {
+      populate_day_forecast(weatherdata.list[i],(i))
     }
     //console.log(weatherdata.list)
   })
@@ -504,11 +511,15 @@ let daysforecast = (city, countrycode) => {
 // calling the function to get city
 getCity()
 // fetching the info from weather page
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&units=imperial&appid=166a433c57516f51dfab1f7edaed8413`)
   .then(r => r.json())
-  .then(({ weather, name, wind, main, rain, sys }) => {
+  .then(({ weather, name, wind, main, clouds , sys }) => {
       document.querySelector('#cityname').textContent = `${name},${sys.country}`
-      document.querySelector('#Precipitation').textContent = `Precipitation: ${rain || '0'}%`
+      if(weather[0].main === "Rain")
+        document.querySelector('#Precipitation').textContent = `Precipitation: ${clouds.all}%`
+      else
+        document.querySelector('#Precipitation').textContent = "Precipitation: 0%"
+      // document.querySelector('#Precipitation').textContent = `Precipitation: ${rain || '0'}%`
       document.querySelector('#Wind').textContent = `Wind: ${wind.speed}mph`
       document.querySelector('#Humidity').textContent = `Humidity: ${main.humidity}%`
       document.querySelector('#weather-desc').textContent = `${weather[0].description}`
