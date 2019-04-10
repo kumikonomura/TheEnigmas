@@ -414,6 +414,9 @@ let getCity = () => {
       cityName = countryArr[j].city
     }
 }
+
+console.log(cityName)
+
 // creating function for the weather icon to dislay in page
 let setweathericon = (description,sunset) => {
   let night = false
