@@ -70,6 +70,15 @@ select {
         font-size: 20px !important;
         margin: auto;
     }
+
+    #heading {
+        margin: 25px auto;
+        font-size: 30px;
+    }
+    
+    table {
+    width: 90%;
+    }
 }
 
 @media only screen 
@@ -81,4 +90,9 @@ select {
         font-size: 20px;
         margin: auto;
   }
+
+  #heading {
+    margin: 25px auto;
+    }
+
 }
