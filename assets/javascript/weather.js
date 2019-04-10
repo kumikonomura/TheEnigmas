@@ -28,6 +28,10 @@ let dayicons = [
     description: 'light rain',
   },
   {
+    class: 'fas fa-cloud-rain wiconstyle',
+    description: 'moderate rain',
+  },
+  {
     class: 'fas fa-cloud-showers-heavy wiconstyle',
     description: 'heavy rain',
   },
@@ -36,12 +40,20 @@ let dayicons = [
     description: 'few clouds',
   },
   {
+    class: 'fas fa-cloud-meatball wiconstyle',
+    description: 'scattered clouds',
+  },
+  {
+    class: 'fas fa-cloud-sun wiconstyle',
+    description: 'broken clouds',
+  },
+  {
     class: 'fas fa-cloud-sun wiconstyle',
     description: 'overcast clouds',
   },
   {
     class: 'fas fa-cloud-sun-rain wiconstyle',
-    description: 'cloudy and suny and rainy',
+    description: 'cloudy and sunny and rainy',
   },
   {
     class: 'fas fa-meteor wiconstyle',
@@ -205,7 +217,7 @@ let countryArr = [
 
   {
     name: 'Ireland',
-    code: 'ie',
+    code: 'IE',
     name: 'Dublin',
   },
 
