@@ -76,6 +76,16 @@ let currencyArr = [
     },
 
     {
+        name: 'Malaysia',
+        code: 'MYR',
+    },
+
+    {
+        name: 'Mexico',
+        code: 'MXN',
+    },
+
+    {
         name: 'New Zealand',
         code: 'NZD',
     },
@@ -96,7 +106,7 @@ let currencyArr = [
     },
 
     {
-        name: 'United Kingdom',
+        name: 'Great Britain',
         code: 'GBP',
     },
 
