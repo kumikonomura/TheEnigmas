@@ -1,23 +1,3 @@
-// // Click event listener when drop down is clicked
-// document.querySelector('#currencydropdown').addEventListener('click', e => {
-//     // prevent page from refresh
-//     e.preventDefault()
-//     // Testing = click event listener works!
-//     console.log('click event working')
-//     // Array for currencies
-//     let currencyList = []
-//     // Fetch the API
-//     fetch(`https://api.exchangeratesapi.io/latest`)
-//         .then(r => r.json())
-//         .then(r => {
-//             console.log(r.rates)
-//             currencyList = Object.keys(r.rates)
-//             // Testing = working!
-//             console.log(currencyList)
-//         })
-    
-// })
-
 // Array of countries from currency API and their codes
 let currencyArr = [
     {
@@ -171,9 +151,11 @@ let currencyArr = [
     },
 ]
 
-
+// variable called foreignCurrency 
 let foreignCurrency;
+// function called loadCurrency
 function loadCurrency() {
+    // set forreignCurrency variable to equal the searchInput on index page from local storage
     foreignCurrency = localStorage.getItem('searchInput')
     currencyArr.forEach(currency => {
         if (foreignCurrency === currency.name) {
@@ -198,20 +180,6 @@ function convertCurrency() {
         document.getElementById('toAmount').value = (oneUnit*amount).toFixed(2)
     })
 }
-// Need to connect to local storage of index page
-// retrieves country name selected on index page from local storage
-let country = localStorage.getItem('searchInput')
-// currCode variable defined
-let currCode = ''
-// function to translate country name into currency code 
-let getCountry = () => {
-    if(country === "")
-    {
-        country = 'United States'
-    }
-    for (i = 0; i < currencyArr.length; i++) {
-        if (country === currencyArr[i].name) {
-            currCode = currencyArr[i].code
-        }
-    }
-}
+
+loadCurrency()
+convertCurrency()
