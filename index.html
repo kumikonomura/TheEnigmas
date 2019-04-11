@@ -28,63 +28,65 @@
         <p></p>
         <input type="text" list="countries" id="searchText">
         <datalist id="countries">
-            <option value="Argentina">
-            <option value="Austria">
-            <option value="Australia">
-            <option value="Belgium">
-            <option value="Bulgaria">
-            <option value="Brazil">
-            <option value="Canada">
-            <option value="China">
-            <option value="Colombia">
-            <option value="Cuba">
-            <option value="Czechia">
-            <option value="Egypt">
-            <option value="France">
-            <option value="Germany">
-            <option value="Great Britain">
-            <option value="Greece">
-            <option value="Hong Kong">
-            <option value="Hungary">
-            <option value="India">
-            <option value="Indonesia">
-            <option value="Ireland">
-            <option value="Israel">
-            <option value="Italy">
-            <option value="Japan">
-            <option value="Lithuania">
-            <option value="Latvia">
-            <option value="Mexico">
-            <option value="Malaysia">
-            <option value="Morocco">
-            <option value="New Zealand">
-            <option value="Netherlands">
-            <option value="Nigeria">
-            <option value="Norway">
-            <option value="Philippines">
-            <option value="Poland">
-            <option value="Portugal">
-            <option value="Romania">
-            <option value="Russia">
-            <option value="Serbia">
-            <option value="Singapore">
-            <option value="Slovenia">
-            <option value="Slovakia">
-            <option value="South Africa">
-            <option value="South Korea">
-            <option value="Sweden">
-            <option value="Switzerland">
-            <option value="Taiwan">
-            <option value="Thailand">
-            <option value="Turkey">
-            <option value="Ukraine">
-            <option value="United Arab Emirates">
-            <option value="United States">
-            <option value="Venezuela">
+            <select>
+                <option value="Argentina"></option>
+                <option value="Austria"></option>
+                <option value="Australia"></option>
+                <option value="Belgium"></option>
+                <option value="Bulgaria"></option>
+                <option value="Brazil"></option>
+                <option value="Canada"></option>
+                <option value="China"></option>
+                <option value="Colombia"></option>
+                <option value="Cuba"></option>
+                <option value="Czechia"></option>
+                <option value="Egypt"></option>
+                <option value="France"></option>
+                <option value="Germany"></option>
+                <option value="Great Britain"></option>
+                <option value="Greece"></option>
+                <option value="Hong Kong"></option>
+                <option value="Hungary"></option>
+                <option value="India"></option>
+                <option value="Indonesia"></option>
+                <option value="Ireland"></option>
+                <option value="Israel"></option>
+                <option value="Italy"></option>
+                <option value="Japan"></option>
+                <option value="Lithuania"></option>
+                <option value="Latvia"></option>
+                <option value="Mexico"></option>
+                <option value="Malaysia"></option>
+                <option value="Morocco"></option>
+                <option value="New Zealand"></option>
+                <option value="Netherlands"></option>
+                <option value="Nigeria"></option>
+                <option value="Norway"></option>
+                <option value="Philippines"></option>
+                <option value="Poland"></option>
+                <option value="Portugal"></option>
+                <option value="Romania"></option>
+                <option value="Russia"></option>
+                <option value="Serbia"></option>
+                <option value="Singapore"></option>
+                <option value="Slovenia"></option>
+                <option value="Slovakia"></option>
+                <option value="South Africa"></option>
+                <option value="South Korea"></option>
+                <option value="Sweden"></option>
+                <option value="Switzerland"></option>
+                <option value="Taiwan"></option>
+                <option value="Thailand"></option>
+                <option value="Turkey"></option>
+                <option value="Ukraine"></option>
+                <option value="United Arab Emirates"></option>
+                <option value="United States"></option>
+                <option value="Venezuela"></option>
+            </select>
         </datalist>
         <p></p>
-        <button id="submit">Submit</button>
-</div>
+        <button class="browser-default" id="submit">Submit</button>
+    </div>
     <!-- on submit, the selected country name is sent to local storage, will be retrieved in travelBuddy.js page -->
     <script>
         document.querySelector('#submit').addEventListener('click',
