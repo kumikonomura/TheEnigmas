@@ -76,6 +76,10 @@ let dayicons = [
     description: 'mist',
   },
   {
+    class: 'fas fa-smog wiconstyle',
+    description: 'fog',
+  },
+  {
     class: 'fas fa-snowflake wiconstyle',
     description: 'snow',
   },
@@ -128,7 +132,7 @@ let countryArr = [
   {
     name: 'Brazil',
     code: 'br',
-    city: 'Brazilia',
+    city: 'Brasilia',
   },
 
   {
@@ -218,7 +222,7 @@ let countryArr = [
   {
     name: 'Ireland',
     code: 'IE',
-    name: 'Dublin',
+    city: 'Dublin',
   },
 
   {
